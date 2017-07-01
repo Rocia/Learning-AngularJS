@@ -47,10 +47,47 @@ var employee = {
   ];  
     $scope.countries = countries; 
 	
-	                var technologies = [                     { name: "PHP", likes: 0, dislikes: 0 },                     { name: "Android", likes: 0, dislikes: 0 },                     { name: "SQL", likes: 0, dislikes: 0 },                     { name: "AngularJS", likes: 0, dislikes: 0 }                 ];  
-                $scope.technologies = technologies;  
-                $scope.incrementLikes = function (technology) {                     technology.likes++;                 };  
-                $scope.incrementDislikes = function (technology) {                     technology.dislikes++;                 };   
+var technologies = [                     
+{ name: "PHP", likes: 0, dislikes: 0 },                     
+{ name: "Android", likes: 0, dislikes: 0 },                     
+{ name: "SQL", likes: 0, dislikes: 0 },                     
+{ name: "AngularJS", likes: 0, dislikes: 0 }                 
+];  
+$scope.technologies = technologies;  
+$scope.incrementLikes = function (technology) {                     
+technology.likes++;                 
+};  
+$scope.incrementDislikes = function (technology) {                     
+technology.dislikes++;                 
+};   
+
+
+var emp = [                 
+{   name: "Ben", dateOfBirth: new Date("November 23, 1980"), gender: "Male", salary: 55000.788, city:"Paris"},                 
+{   name: "David", dateOfBirth: new Date("May 05, 1970"), gender: "Male", salary: 68000, city:"London"},                 
+{   name: "Chris", dateOfBirth: new Date("August 15, 1974"), gender: "Male", salary: 57000, city:"Paris"},                 
+{   name: "Alex", dateOfBirth: new Date("October 27, 1979"), gender: "Female", salary: 53000, city:"London"},                 
+{   name: "Amy", dateOfBirth: new Date("December 30, 1983"), gender: "Female", salary: 60000, city:"Paris"}             
+];  
+    $scope.emp = emp;
+	$scope.SortColumn = "name";
+	$scope.rowCount = 3;  
+	$scope.reverseSort = false;  
+	$scope.sortData = function(column){
+	$scope.reverseSort = ($scope.sortColumn == column) ? 
+		!$scope.reverseSort:false;
+	$scope.sortColumn = column;             
+	}  
+    $scope.getSortClass = function (column) {  
+        if ($scope.sortColumn == column) {                     
+		return $scope.reverseSort                       
+		? 'glyphicon glyphicon-circle-arrow-down'                       
+		: 'glyphicon glyphicon-circle-arrow-up';                 
+		}  
+        return '';             
+		}    
+
+	
 });  
 
 //JSbasic4.html

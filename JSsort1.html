@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html> 
+<head>     
+<title></title>     
+<script src="Scripts/angular.min.js"></script>     
+<script src="Scripts/Script.js"></script>     
+<link href="css/bootstrap.min.css" rel="stylesheet" /> 
+</head> <body ng-app="myModule">     
+<div ng-controller="myController">  
+<br>
+<br>
+<br>
+<br> 
+<center>      
+<table  class = "table">             
+<thead>                 
+<tr>                     
+<th>Name</th>                     
+<th>Date of Birth</th>                     
+<th>Gender</th>                     
+<th>Salary (number filter)</th> 
+<th>Salary (currency filter)</th>                 
+</tr>             
+</thead>             
+<tbody>                 
+<tr ng-repeat="employee in emp | orderBy:SortColumn">                     
+<td> {{ employee.name | uppercase }} </td>                     
+<td> {{ employee.dateOfBirth | date:"d/MM/yyyy" }} </td>                     
+<td> {{ employee.gender }} </td>                     
+<td> {{ employee.salary | number:2 }} </td>                     
+<td> {{ employee.salary | currency : "£" : 1 }} </td>                 
+</tr>             
+</tbody>         
+</table>     
+</center>
+</div> 
+</body> 
+</html> 
