@@ -1,6 +1,7 @@
 //Create the module 
 var myApp = angular.module("myModule", []);  
 
+ 
 //JSbasic3.html
 // Creating the controller and registering with the module all done in one line. 
 myApp.controller("myController", function ($scope) {     
@@ -22,6 +23,18 @@ var employee = {
   { firstName: 'Ben', lastName: 'Stokes', gender: 'Male' },
   ]
   $scope.employees = employees; 
+  
+  var employ = [
+	{   name: "Ben", dateOfBirth: new Date("November 23, 1980"), gender: "Male", salary: 55000.788, city:"Paris"},                 
+	{   name: "David", dateOfBirth: new Date("May 05, 1970"), gender: "Male", salary: 68000, city:"London"},                 
+	{   name: "Chris", dateOfBirth: new Date("August 15, 1974"), gender: "Male", salary: 57000, city:"Paris"},                 
+	{   name: "Alex", dateOfBirth: new Date("October 27, 1979"), gender: "Female", salary: 53000, city:"London"},                 
+	{   name: "Amy", dateOfBirth: new Date("December 30, 1983"), gender: "Female", salary: 60000, city:"Paris"},
+	{   name: "Amy", dateOfBirth: new Date("November 30, 2003"), gender: "Female", salary: 60000, city:"London"}                         
+];
+  $scope.employ = employ;
+  $scope.employList = "employList.html";   
+  
   var countries = [                     
   { name: "UK",                         
   cities: [                             
@@ -67,7 +80,8 @@ var emp = [
 {   name: "David", dateOfBirth: new Date("May 05, 1970"), gender: "Male", salary: 68000, city:"London"},                 
 {   name: "Chris", dateOfBirth: new Date("August 15, 1974"), gender: "Male", salary: 57000, city:"Paris"},                 
 {   name: "Alex", dateOfBirth: new Date("October 27, 1979"), gender: "Female", salary: 53000, city:"London"},                 
-{   name: "Amy", dateOfBirth: new Date("December 30, 1983"), gender: "Female", salary: 60000, city:"Paris"}             
+{   name: "Amy", dateOfBirth: new Date("December 30, 1983"), gender: "Female", salary: 60000, city:"Paris"},
+{   name: "Amy", dateOfBirth: new Date("November 30, 2003"), gender: "Female", salary: 60000, city:"London"}                         
 ];  
     $scope.emp = emp;
 	$scope.SortColumn = "name";
@@ -81,8 +95,8 @@ var emp = [
     $scope.getSortClass = function (column) {  
         if ($scope.sortColumn == column) {                     
 		return $scope.reverseSort                       
-		? 'glyphicon glyphicon-circle-arrow-down'                       
-		: 'glyphicon glyphicon-circle-arrow-up';                 
+		? 'arrow-down'                       
+		: 'arrow-up';                 
 		}  
         return '';             
 		}    
