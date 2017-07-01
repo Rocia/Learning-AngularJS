@@ -1,0 +1,31 @@
+<!DOCTYPE html> 
+<html> 
+<head>     
+<title></title>     
+<script src="Scripts/angular.min.js"></script>     
+<script src="Scripts/Script.js"></script>     
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+</head> 
+<body ng-app="myModule">     
+<div ng-controller="myController">         
+Rows to display : <input type="number" step="1" ng-model="rowCount" max="5" min="0" />         
+<br /><br />         
+<table  class = "table">     
+<thead>         
+<tr>             
+<th>Name</th>             
+<th>Gender</th>             
+<th>Salary</th>         
+</tr>     
+</thead>     
+<tbody>         
+<tr ng-repeat="employee in employees">             
+<td> {{ employee.name }} </td> 
+<td> {{ employee.gender}} </td>             
+<td> {{ employee.salary}} </td>         
+</tr>     
+</tbody> 
+</table>
+</div>
+</body> 
+</html> 
