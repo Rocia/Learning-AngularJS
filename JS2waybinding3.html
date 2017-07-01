@@ -1,0 +1,38 @@
+<!doctype html> 
+<html> 
+<head>     
+<script src="Scripts/angular.min.js">
+</script>     
+<script src="Scripts/Script.js">
+</script> 
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel = "stylesheet" href = "css/bootstrap.min.css">
+</head> 
+<body  ng-app="myModule">     
+<div ng-controller="myController"> 
+<table class = "table">
+<tr>
+<th>
+First Name
+</th>
+<th>
+Last Name  
+</th>     
+<th>
+Gender
+</th>    
+</tr>                             
+<tr ng-repeat="employee in employees">                     
+<td> {{ employee.firstName }} 
+</td>                     
+<td> {{ employee.lastName }} 
+</td>                     
+<td> {{ employee.gender }} 
+</td>  
+</tr> 
+ </table>   
+
+</div> 
+</body> 
+</html> 
