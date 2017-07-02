@@ -3,15 +3,19 @@ var app = angular.module("Demo", ["ngRoute"])
 $routeProvider                     
 .when("/home", {                         
 templateUrl: "Templates/home.html",                         
-controller: "homeController"                     
+controller: "homeController"  
+caseInsensitiveMatch: true                   
 })                     
 .when("/courses", {                         
 templateUrl: "Templates/courses.html", 
-controller: "coursesController"                     
+controller: "coursesController"   
+caseInsensitiveMatch: true                                  
 })                     
 .when("/students", {                         
 templateUrl: "Templates/students.html",                         
-controller: "studentsController"                     
+controller: "studentsController"
+caseInsensitiveMatch: true                   
+                     
 })             
 })  
 .config(['$locationProvider', function($locationProvider) {     
@@ -22,7 +26,8 @@ $scope.message = "Home Page";
 })             
 .controller("coursesController", function ($scope) {                 
 $scope.courses = ["PHP", "Android", "Angular JS", "SQL Server"];             
-})              .controller("studentsController", function ($scope, $http) {                  
+})              
+.controller("studentsController", function ($scope, $http) {                  
 $http.get("data.php")                                         
 .then(function (response) {                                             
 $scope.students = response.data;                                         
