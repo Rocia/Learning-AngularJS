@@ -1,7 +1,7 @@
 <?php
 $con= mysqli_connect('localhost','root','');
-mysqli_select_db($con,'shopping_test');
-$sql ="SELECT * FROM product_info";
+mysqli_select_db($con,'product');
+$sql ="SELECT * FROM product";
 $result= mysqli_query($con,$sql) or die(mysqli_error());
 
 while($row= mysqli_fetch_assoc($result))

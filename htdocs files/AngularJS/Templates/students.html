@@ -1,0 +1,20 @@
+<!DOCTYPE html> 
+<html ng-app="Demo"> 
+<head>     
+<title></title>     
+<script src="Scripts/angular.min.js"></script>     
+<script src="Scripts/angular.route.min.js"></script>     
+<script src="Scripts/route.js"></script>     
+<link href="css/Styles.css" rel="stylesheet" /> 
+<link href="css/bootstrap.min.css" rel="stylesheet" /> 
+
+</head> 
+<body>   
+<h1>List of Students</h1> 
+<ul>     
+<li ng-repeat="student in students">         
+{{student.pname}}     
+</li> 
+</ul>  
+</body> 
+</html> 
