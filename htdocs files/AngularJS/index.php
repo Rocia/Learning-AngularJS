@@ -1,6 +1,6 @@
 <?php
 $con= mysqli_connect('localhost','root','');
-mysqli_select_db($con,'shopping_test');
+mysqli_select_db($con,'test');
 $sql ="SELECT * FROM product_info";
 $result= mysqli_query($con,$sql) or die(mysqli_error());
 
