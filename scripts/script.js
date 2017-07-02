@@ -4,7 +4,8 @@ var myApp = angular.module("myModule", []);
  
 //JSbasic3.html
 // Creating the controller and registering with the module all done in one line. 
-myApp.controller("myController", function ($scope) {     
+
+myApp.controller("myController", function ($scope, calculation) {     
 $scope.message = "AngularJS Tutorial"; 
 
 var employee = {         
@@ -116,6 +117,12 @@ var emp = [
 		}  
      $scope.output = output;             
 	};   
+	
+	$scope.input1;
+	$scope.input2;
+	$scope.cal=function(input1,input2,b){
+		$scope.output = calculation.calci(input1,input2,b);
+	}
 });  
 
 //JSbasic4.html
